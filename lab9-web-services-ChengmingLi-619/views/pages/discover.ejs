@@ -1,0 +1,28 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <div class="col"><%- include ('../partials/message') %></div>
+                <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+                <div class="container text-center">
+                    <% results.forEach(function(result){ %>
+                        <div class = "row">
+                            <div class="card" style="width: 18rem;">
+                                <img src="<%= result.images[0].url%>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= result.name%></h5>
+                                    <p class="card-text">Date: <%= result.dates.start.localDate%></p>
+                                    <p class="card-text">Time: <%= result.dates.start.localTime%></p>
+                                    <a href="<%= result.url%>" class="btn btn-primary">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <%});%>
+
+                </div>
+            </div>
+        </main>
+
+        <%- include ('../partials/footer') %>

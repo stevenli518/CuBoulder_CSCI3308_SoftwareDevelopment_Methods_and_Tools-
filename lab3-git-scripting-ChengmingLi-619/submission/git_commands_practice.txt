@@ -1,0 +1,31 @@
+$ pwd
+/c/Users/LiChe/lab3-git-scripting-ChengmingLi-619
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab3-git-scripting-ChengmingLi-619 (main)
+$ ls
+README.md  course-catalog.txt  docker-compose.yaml  tmp.sh
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab3-git-scripting-ChengmingLi-619 (main)
+$ ./tmp.sh
+/c/Users/LiChe
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab3-git-scripting-ChengmingLi-619 (main)
+$ cat tmp.sh
+echo $HOME
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab3-git-scripting-ChengmingLi-619 (main)
+$ rm tmp.sh
+rm: remove write-protected regular file 'tmp.sh'?
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab3-git-scripting-ChengmingLi-619 (main)
+$ ls
+README.md  course-catalog.txt  docker-compose.yaml  tmp.sh
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab3-git-scripting-ChengmingLi-619 (main)
+$ rm tmp.sh
+rm: remove write-protected regular file 'tmp.sh'? Y
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab3-git-scripting-ChengmingLi-619 (main)
+$ ls
+README.md  course-catalog.txt  docker-compose.yaml
+

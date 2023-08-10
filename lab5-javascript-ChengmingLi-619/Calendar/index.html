@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link href="../Calendar/resources/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <!-- Replace file.js with the path to script.js in the lab directory -->
+    <script src="../Calendar/resources/js/my_script.js"></script>
+</head>
+
+<body>
+    <!-- Replace myFunction() with initialize_content() -->
+
+    <body onload="initialize_content()">
+        <div class="container">
+            <div id="calendar" class="row">
+                <!-- Button trigger modal
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Create/Update Event
+                </button> -->
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Event</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    <form>
+
+                        
+                        <div class="modal-body">
+                            <div class="row g-3 align-items-center">
+                                <!-- <div class="col-auto">
+                                    <label for="inputName" class="col-form-label fs-6 align-items-start">Name</label>
+                                </div> -->
+                                <div class="col-auto fs-6 align-items-start">Name
+                                    <input type="text" id="inputName" class="form-control "
+                                        aria-describedby="nameHelpInline">
+                                </div>
+
+                                <div></div>
+                                <div class="col-auto">
+                                    <label for="Weekday" class="col-form-label fs-6 ">Weekday</label>
+                                </div>
+                                <div class="col-auto">
+                                    <!-- "this.value" passed to update_location_options() refers to the text in the "value" attribute of the option that is chosen by the user -->
+                                    <select class="form-control" id="Weekday" required>
+                                        <option value="none"></option>
+                                        <option value="monday">monday</option>
+                                        <option value="tuesday">tuesday</option>
+                                        <option value="wednesday">wednesday</option>
+                                        <option value="thursday">thursday</option>
+                                        <option value="friday">friday</option>
+                                        <option value="saturday">saturday</option>
+                                        <option value="sunday">sunday</option>
+                                    </select>
+                                </div>
+
+                                
+                                <div></div>
+                                <div class="col-auto">
+                                    <label for="Time" class="col-form-label fs-6 ">Time</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="time" id="Time" class="form-control" aria-describedby="timeHelpInline">
+                                </div>
+
+                                <div></div>
+                                <div class="col-auto">
+                                    <label for="Modality" class="col-form-label fs-6 ">Modality</label>
+
+                                </div>
+                                <div class="col-auto">
+                                    <select class="form-control" id="event-modality" required
+                                        onchange="update_location_options(this.value)">
+                                        <option value="none"></option>
+                                        <option value="In-Person">In-Person</option>
+                                        <option value="Remote">Remote</option>
+                                    </select>
+                                </div>
+
+                                <div></div>
+                                <div class="col-auto">
+                                    <label for="Location" id = "location_label"class="col-form-label fs-6 "> Location</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="text" id="Location" class="form-control">
+                                </div>
+
+                                <div></div>
+                                <div class="col-auto">
+                                    <label for="RemoteURL" id = "remote_label"class="col-form-label fs-6 ">Remote<br>URL</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="text" pattern="https://.*" placeholder="https://example.com"
+                                        id="RemoteURL" class="form-control" aria-describedby="AttendeesHelpInline">
+                                </div>
+
+                                <div></div>
+                                <div class="col-auto">
+                                    <label for="Attendees" class="col-form-label fs-6 ">Attendees</label>
+                                </div>
+                                <div class="col-auto">
+                                    <input type="text" pattern="^[A-Z,].+" id="Attendees" class="form-control"
+                                        aria-describedby="AttendeesHelpInline">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="close_button" type="button" class="btn btn-secondary"
+                                data-bs-dismiss="modal">Close</button>
+                            <button id="submit_button" class="btn btn-primary" type="submit">Create Event</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+
+</html>

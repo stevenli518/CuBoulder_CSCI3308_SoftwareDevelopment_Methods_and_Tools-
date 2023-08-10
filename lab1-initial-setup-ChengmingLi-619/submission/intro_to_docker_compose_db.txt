@@ -1,0 +1,34 @@
+postgres=# CREATE DATABASE practicedb;
+CREATE DATABASE
+postgres=# \c practicedb;
+You are now connected to database "practicedb" as user "postgres".
+practicedb=# CREATE TABLE
+practicedb-#   IF NOT EXISTS store(
+practicedb(#     id SERIAL,
+practicedb(#     product_name VARCHAR(40) NOT NULL,
+practicedb(#     qty INTEGER NOT NULL,
+practicedb(#     price FLOAT NOT NULL,
+practicedb(#     PRIMARY KEY (id)
+practicedb(#   );
+CREATE TABLE
+practicedb=#
+practicedb=# INSERT INTO
+practicedb-#   store (product_name, qty, price)
+practicedb-# VALUES
+practicedb-#   ('apple', 10, 1),
+practicedb-#   ('pear', 5, 2),
+practicedb-#   ('banana', 10, 1.5),
+practicedb-#   ('lemon', 100, 0.1),
+practicedb-#   ('orange', 50, 0.2);
+INSERT 0 5
+practicedb=# SELECT * FROM store;
+ id | product_name | qty | price
+----+--------------+-----+-------
+  1 | apple        |  10 |     1
+  2 | pear         |   5 |     2
+  3 | banana       |  10 |   1.5
+  4 | lemon        | 100 |   0.1
+  5 | orange       |  50 |   0.2
+(5 rows)
+
+practicedb=#

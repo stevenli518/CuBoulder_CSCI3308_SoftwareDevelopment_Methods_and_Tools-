@@ -1,0 +1,17 @@
+$ git commit -m "Commit message goes here"
+[main aaf1b4a] Commit message goes here
+ 1 file changed, 3 insertions(+)
+ create mode 100644 test.txt
+
+LiChe@DESKTOP-B0VP2BB MINGW64 ~/lab1-initial-setup-ChengmingLi-619 (main)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 322.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/CSCI3308-Fall22/lab1-initial-setup-ChengmingLi-619.git
+   18fef4b..aaf1b4a  main -> main
+

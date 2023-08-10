@@ -1,0 +1,25 @@
+<%- include ('../partials/header') %>
+  <%- include ('../partials/menu') %>
+    <%- include ('../partials/message') %>
+      <main>
+        <div class="container" style = "margin: auto;">
+          <h1 style="margin: auto;">Hello, There</h1>
+        </div>
+        <div class="container" style="margin: auto; ">
+          Please find the movie you like by name
+          <form action="/main" method="post">
+            <div>
+              <label class="control-label" for="t">Title:</label>
+              <input type="text" id="t" name="t" class="input-big">
+              <!-- <label for="movie_text" class="form-label">name:</label> -->
+              &nbsp;&nbsp;
+
+              <button type="submit" class="btn btn-primary" style="align-items:center;">Search</button>
+            </div>
+          </form>
+        </div>
+        </div>
+
+      </main>
+
+      <%- include ('../partials/footer') %>

@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "69dac994-8d5a-4ce9-96cb-ccd0b787a008",
+		"name": "lab7_nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23742924"
+	},
+	"item": [
+		{
+			"name": "Blinking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/blinking",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"blinking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET_TODO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/trails",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST_TODO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"MoonBay\",\r\n    \"location\":\"CA\",\r\n    \"length\":1,\r\n    \"elevation_gain\":4000,\r\n    \"difficulty\":\"easy\",\r\n    \"avg_rating\": 9.9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/post",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT_TODO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"review_id\" : 1,\r\n    \"image_id\":2,\r\n    \"review\" : \"easy\",\r\n    \"image_url\": \"http://dummyimage.com/110x100.png/dddddd/000000:\",\r\n    \"caption\":\"new image\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/put",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"put"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE_TODO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_name\" : \"akrystof1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PartB_1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"selection\":\"elevation_gain\",\r\n    \"difficulty\" : \"easy\",\r\n    \"avg_rating\" : \"5\",\r\n    \"location\": \"Texas\",\r\n    \"elevation_gain\" : 2500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/filter?avg_rating=1&location=California&difficulty=difficult&elevation_gain=0&selection=location",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"filter"
+					],
+					"query": [
+						{
+							"key": "avg_rating",
+							"value": "1"
+						},
+						{
+							"key": "location",
+							"value": "California"
+						},
+						{
+							"key": "difficulty",
+							"value": "difficult"
+						},
+						{
+							"key": "elevation_gain",
+							"value": "0"
+						},
+						{
+							"key": "selection",
+							"value": "location"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PartB_2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"trail_name\":\"Norway Maple\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/trail_review",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trail_review"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

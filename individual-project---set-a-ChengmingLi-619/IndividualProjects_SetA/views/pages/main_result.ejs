@@ -1,0 +1,147 @@
+<%- include ('../partials/header') %>
+  <%- include ('../partials/menu') %>
+
+
+    <main>
+      <div class="col">
+        <%- include ('../partials/message') %>
+      </div>
+      <% if (results != []) {%>
+        <div class="container text-center">
+          <div class="row">
+            <div class="card" style="width: 25rem;margin: auto;">
+              <img src="<%= results.Poster%>" class="card-img-top" alt="..." width="25" />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <% if (results.Title) {%>
+                    <%= results.Title%>
+                  <%} else {%>
+                    -
+                  <%}%>
+                  
+                </h5>
+                <% if (results.Actors) {%>
+                  <p class="card-text">Cast: <%= results.Actors%>
+                  </p>
+                <%} else {%>
+                  <p class="card-text">Cast: -
+                  </p>
+                <%}%>
+
+                <% if (results.Genre) {%>
+                  <p class="card-text">Genre: <%= results.Genre%>
+                  </p>
+                <%} else {%>
+                  <p class="card-text">Genre: -
+                  </p>
+                <%}%>
+
+                <% if (results.Plot) {%>
+                  <p class="card-text">Plot: <%= results.Plot%>
+                  </p>
+                <%} else {%>
+                  <p class="card-text">Plot: -
+                  </p>
+                <%}%>
+
+                <% if (results.Released) {%>
+                  <p class="card-text">Release Date: <%= results.Released%>
+                  </p>
+                <%} else {%>
+                  <p class="card-text">Release Date: -
+                  </p>
+                <%}%>
+                <% if (results.Ratings) {%>
+                  <% results.Ratings.forEach(function(rating){ %>
+                    <p class="card-text">
+                      <%= rating.Source%>: <%= rating.Value%>
+                    </p>
+                    <%});%>
+                <%} else {%>
+                  <p class="card-text">Link Unavailable: -
+                  </p>
+                <%}%>
+
+                <% if (results.Response == 'True') {%>
+                  
+
+                  <!-- Modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="Review_btn">
+                    Add Review
+                  </button>
+                   
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel"><%= results.Title%> Review</h1>
+              
+                          </div>
+                           
+                            <div class="modal-body">
+                              <form action="/main_result" method="post" id="reviewform">
+                              <!-- Movie -->
+                              <div class="col-auto">
+                                <label for="Movie" id = "Movie_label"class="col-form-label fs-6 "> Movie</label>
+                              </div>
+                              <div class="col-auto">
+                                <input type="text" id="Movie" name = "Movie"class="form-control" value="<%= results.Title%>" readonly>
+                              </div>
+                              <!-- Review -->
+                              <div class="col-auto">
+                                <label for="Review" id = "Review_label"class="col-form-label fs-6 "> Review</label>
+                              </div>
+                              <div class="col-auto">
+                                <input type="text" id="Review" name = "Review" class="form-control" >
+                              </div>
+                            </div>
+                              <!-- Date -->
+                              <div class="col-auto">
+                                <label for="Date" id = "Date_label"class="col-form-label fs-6 "> Date</label>
+                              </div>
+                              <div class="col-auto">
+                                <input type="date" id="date" name = "date" class="form-control" >
+                              </div>
+                           
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" id = "close_btn">Close</button>
+                                <button type="submit" class="btn btn-primary" >Submit</button>
+                              </div>
+                            </form>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  
+                      <script>
+                        var review_btn = document.getElementById("Review_btn");
+                        
+                        var close_btn = document.getElementById("close_btn");
+                        
+                        var modal = document.getElementById("exampleModal");
+                        
+                        review_btn.onclick = function() {
+                          $('#exampleModal').modal('show')
+                            console.log(modal);
+                        }
+                        
+                        close_btn.onclick = function() {
+                          $('#exampleModal').modal('hide')
+                        }
+
+                      </script>
+                <%} else {%>
+
+                <%}%>
+                  
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <%}%>
+    </main>
+  
+
+      <%- include ('../partials/footer') %>

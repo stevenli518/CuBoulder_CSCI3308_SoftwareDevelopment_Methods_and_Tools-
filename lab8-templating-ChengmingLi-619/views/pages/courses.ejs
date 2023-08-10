@@ -1,0 +1,78 @@
+<%- include ('../partials/header') %>
+    <%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <!-- THE REST OF YOUR HTML CODE GOES HERE -->
+                <% if (locals.message) { %>
+                    <div class="alert alert-<%- locals.error ? 'danger' : 'success' %>" role="alert">
+                        <%= message %>
+                    </div>
+                    <% } %>
+
+                        <table>
+                            <tr style="width:100%">
+                                <th scope="col" style="width:33%">COURSE ID</th>
+                                <th scope="col" style="width:33%">COURSE NAME</th>
+                                <th scope="col" style="width:33%">CREDIT HOURS</th>
+
+                            </tr>
+                            <tbody>
+                                <% courses.forEach(function(course){ %>
+                                    <tr>
+                                        <td>
+                                            <%=course.course_id%>
+                                        </td>
+                                        <td>
+                                            <%=course.course_name%>
+                                        </td>
+                                        <td>
+                                            <%=course.credit_hours%>
+                                        </td>
+                                        <td>
+                                            <!-- Haven't taken yet -->
+                                            <%if (locals.action=="add" ) { %>
+
+                                                <%if (course.taken) { %>
+                                                    <form action="/courses/add" method="post">
+                                                        <input type="hidden" value="<%=course.course_id %>"
+                                                            name="course_id">
+                                                        <button type="submit" class="btn btn-outline-secondary "
+                                                            disabled>Add</button>
+
+                                                    </form>
+
+                                                    <% } else {%>
+                                                        <form action="/courses/add" method="post">
+                                                            <input type="hidden" value="<%=course.course_id %>"
+                                                                name="course_id">
+                                                            <button type="submit"
+                                                                class="btn btn-outline-success ">Add</button>
+                                                        </form>
+
+                                                        <%}%>
+                                                            <!--Taken  -->
+                                                            <% } else if (locals.action=="delete" ) { %>
+                                                                <form action="/courses/delete" method="post">
+                                                                    <input type="hidden" value="<%=course.course_id %>"
+                                                                        name="course_id">
+                                                                    <button type="submit"
+                                                                        class="btn btn-outline-danger">Delete</button>
+                                                                </form>
+                                                                <% } %>
+
+                                        </td>
+
+                                    </tr>
+
+
+
+                                    <%});%>
+                            </tbody>
+
+
+                        </table>
+            </div>
+        </main>
+
+        <%- include ('../partials/footer') %>
